@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Sarcasm Formatter</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Sarcasm Formatter</h1>
+        </div>
+    </header>
+    <main>
+        <section class="user-input-container">
+            <form>
+                <textarea id="user-input" onfocus="this.value=''">Insert the text you wish to format!</textarea>
+            </form>
+            <form>
+                <textarea id="result" readonly>FoRmAtTeD ReSuLt</textarea>
+            </form>
+        </section>
+        <section class="button-container">
+            <button class="cta-generate" onclick="sarcasmFormatter()">Format Text!</button>
+            <form>
+                <input type="checkbox" id="checkLowerCase">
+                <label for="checkLowerCase">Start with lower case</label>
+            </form>
+        </section>
+    </main>
+
+    <!-- Sarcasm formatter  -->
+    <script src="./sarcasm-formatter.js"></script>
+</body>
+
+</html>
