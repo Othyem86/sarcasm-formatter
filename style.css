@@ -25,6 +25,12 @@ h1 {
 	text-align: center;
 }
 
+.header-image {
+	height: 10vh;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+
 main {
 	width: 90%;
 	margin: auto;
