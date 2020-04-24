@@ -12,7 +12,7 @@ const alterNate = (input, bool) => {
     for (let i = 0; i < input.length; i++) {
 
         // Check only non-space, non-numeric characters
-        if (/[\S\D]/ig.test(input[i])) {
+        if (/[^\s\d\W]/ig.test(input[i])) {
 
             // Capitalizes alternatively
             if (lowerCase === false) {
