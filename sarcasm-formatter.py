@@ -20,7 +20,7 @@ while loop_until_dum_dum_gets_it:
 user_input = input("Please enter the string you desire to format:\n")
 
 # Store list of all non-white-space, non-numeric characters
-just_character_list = re.findall("[^\s^\d]", user_input)
+just_character_list = re.findall("[^\s\d\W]", user_input)
 # Function to alternate characters througn string
 def alternate(str, user_bool):
     # Declare basic function variables
