@@ -13,7 +13,7 @@ while loop_until_dum_dum_gets_it:
         user_start_lower = True
         break
     elif user_desired_case.lower() == 'n':
-        user_start_lower = False 
+        user_start_lower = False
         break
 
 # Request user input string
@@ -21,6 +21,8 @@ user_input = input("Please enter the string you desire to format:\n")
 
 # Store list of all non-white-space, non-numeric characters
 just_character_list = re.findall("[^\s\d\W]", user_input)
+
+
 # Function to alternate characters througn string
 def alternate(str, user_bool):
     # Declare basic function variables
@@ -39,6 +41,7 @@ def alternate(str, user_bool):
         else:
             result += user_input[i]
     return result
+
 
 # Store formatted string
 alternate_string = alternate(user_input, user_start_lower)
