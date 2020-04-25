@@ -17,7 +17,7 @@ while True:
 user_input = input("Please enter the string you desire to format:\n> ")
 
 # Store list of all non-white-space, non-numeric characters
-list_of_chars = re.findall("[^\s\d\W]", user_input)
+list_of_chars = re.findall("[^\\s\\d\\W]", user_input)
 
 # Function to alternate characters througn string
 def alternate(str, user_bool):
