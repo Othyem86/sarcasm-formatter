@@ -14,8 +14,14 @@ const alterNate = (input, bool) => {
         // Check only non-space, non-numeric characters
         if (/[^\s\d\W]/ig.test(input[i])) {
 
+            // Always writes 'i' lowerCase and 'L' upperCase
+           
             // Capitalizes alternatively
-            if (lowerCase === false) {
+            if (input[i].toLowerCase() == 'i') {
+                str += 'i';
+            } else if (input[i].toLowerCase() == 'l') {
+                str += 'L';
+            } else if (lowerCase === false) {
                 str += input[i].toUpperCase();
                 lowerCase = true;
             } else {

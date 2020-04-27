@@ -28,7 +28,11 @@ def alternate(str, user_bool):
     for i in range(len(str)):
         # Alternate each letter, skipping whitespace, numbers and punctuation
         if user_input[i] in list_of_chars:
-            if next_char_upper_case == False:
+            if user_input[i].lower() == 'i':
+                result += 'i'
+            elif user_input[i].lower() == 'l':
+                result += 'L'
+            elif next_char_upper_case == False:
                 result += user_input[i].upper()
                 next_char_upper_case = True
             else:
