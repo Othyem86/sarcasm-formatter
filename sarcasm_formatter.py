@@ -1,7 +1,9 @@
 import re
+import argh
 
-def sarcasm(
-	input_text='',
+@argh.arg('input_text',default='',nargs='?')
+@argh.arg('-i', '--interactive')
+def sarcasm(input_text,
 	interactive=False,
 	output_intro=False,
 	uppercase_start=False,
