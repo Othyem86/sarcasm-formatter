@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
-USAGE="Usage: $(basename $0) [ -d -l -u -h ] <str>\n
+USAGE="Usage: $(basename $0) [ -d -l -n -u -h ] <str>\n
 	-d:	Print debugging output.\n
 	-l:	Start with lowercase character.\n
+	-n:	Do not write output to clipboard (wl-clipboard and xclip).\n
 	-u:	Start with uppercase character.\n
 	-h:	Displays help message.\n
 	<str>:	String to be formatted.\n
 "
 
 # Read options:
-while getopts "dluh" flag
+while getopts "dlnuh" flag
 do
         case "$flag" in
                 d)
@@ -17,6 +18,9 @@ do
                         ;;
                 l)
                         UPPERCASE=false
+                        ;;
+                n)
+                        NO_CLIPBOARD=1
                         ;;
                 u)
                         UPPERCASE=true
@@ -67,4 +71,11 @@ for i in $(seq 1 ${#IN}); do
 	fi
 	OUT="${OUT}${LETTER}"
 done
-echo "${OUT}"
+
+if [ -z "$NO_CLIPBOARD" ]; then
+	wl-copy "${OUT}"
+	echo "${OUT}" | xclip
+	echo "\"${OUT}\" written to clipboard."
+else
+	echo "${OUT}"
+fi
